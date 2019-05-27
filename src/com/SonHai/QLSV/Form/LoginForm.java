@@ -1,4 +1,4 @@
-package com.SonHai.QLSV;
+package com.SonHai.QLSV.Form;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
