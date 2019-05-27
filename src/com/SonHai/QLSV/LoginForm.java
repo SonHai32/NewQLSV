@@ -17,6 +17,7 @@ public class LoginForm extends JFrame implements ActionListener {
     public void setUI(){
         btnPanel = new JPanel();
         btnLogin = new JButton("LOGIN");
+        btnLogin.addActionListener(this);
 
         usernameLabel = new JLabel("Username",JLabel.CENTER);
         passwordLabel = new JLabel("Password",JLabel.CENTER);
@@ -26,8 +27,6 @@ public class LoginForm extends JFrame implements ActionListener {
 
         usernameTextField = new JTextField(20);
         passwordField = new JPasswordField(20);
-
-        passwordField.setEchoChar('*');
 
         usernameTextField.setBackground(Color.cyan);
         usernameTextField.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
@@ -59,12 +58,20 @@ public class LoginForm extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //System.out.println(btnOK.getBounds());
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        long username = usernameTextField.getText().hashCode();
+        long password = passwordField.getText().hashCode();
+        if(username == -1943733835 && password == 948877636){
+            JOptionPane.showMessageDialog(this,"Done");
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Password Incorrect","ERRO",JOptionPane.ERROR_MESSAGE);
+        }
+
+
 
     }
 }
