@@ -13,8 +13,11 @@ public class LoginForm extends JFrame implements ActionListener {
     private JTextField usernameTextField ;
     private JPasswordField passwordField;
     private JButton btnLogin;
+    private ImageIcon errorIcon;
 
     public void setUI(){
+        errorIcon = new ImageIcon("src/image/ERROR.png");
+
         btnPanel = new JPanel();
         btnLogin = new JButton("LOGIN");
         btnLogin.addActionListener(this);
@@ -57,6 +60,7 @@ public class LoginForm extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        System.out.println(errorIcon.getIconWidth()+"x"+errorIcon.getIconHeight());
 
     }
 
@@ -64,11 +68,13 @@ public class LoginForm extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         long username = usernameTextField.getText().hashCode();
         long password = passwordField.getText().hashCode();
+
         if(username == -1943733835 && password == 948877636){
             JOptionPane.showMessageDialog(this,"Done");
         }
         else{
-            JOptionPane.showMessageDialog(this,"Password Incorrect","ERRO",JOptionPane.ERROR_MESSAGE);
+
+            JOptionPane.showMessageDialog(this,"Password Incorrect","Login Fail",JOptionPane.ERROR_MESSAGE,errorIcon);
         }
 
 
