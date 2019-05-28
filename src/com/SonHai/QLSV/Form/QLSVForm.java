@@ -5,22 +5,28 @@ import java.awt.*;
 
 public class QLSVForm extends JFrame {
 
-    private JPanel searchPanel;
+    private JPanel headerAndSearchPanel;
     private JPanel optionsPanel;
     private JLabel headerLabel;
     private JLabel searchLaybel;
     private JTextField searchField;
-    private JButton btnXuatDanhSach;
-    private JButton btnThem;
-    private JButton btnXoa;
-    private JButton btnSua;
+    private JButton btnSinhVien;
+    private JButton btnLopHoc;
+    private JButton btnBangDiem;
+    private JButton btnMonHoc;
+    private JButton btnKhoa;
+    private JButton btnThongTin;
 
+    public QLSVForm(){
+        setUI();
+    }
 
-    public void setUI(){
+    private void setUI(){
 
         ImageIcon searchIcon = new ImageIcon("src/image/search_16px.png");
+        ImageIcon studentIcon = new ImageIcon("src/image/student_64px.png");
 
-        headerLabel = new JLabel("QLSV APPLICATION", JLabel.CENTER);
+        headerLabel = new JLabel("QLSV APPLICATION", JLabel.LEFT);
         headerLabel.setForeground(Color.BLACK);
         headerLabel.setText("<html> <h1><font color='red'>QLSV APPLICATION</font></h1></html>") ;
 
@@ -29,34 +35,49 @@ public class QLSVForm extends JFrame {
         //headerLabel.setForeground(Color.GREEN);
 
 
-        btnXuatDanhSach = new JButton("Xuất Danh Danh Sinh Viên");
-        btnThem = new JButton("Thêm Sinh Viên ");
-        btnXoa = new JButton("Xoa");
-        btnSua = new JButton("Sua");
+        btnSinhVien = new JButton("Sinh Viên",studentIcon);
+        btnSinhVien.setHorizontalAlignment(SwingConstants.LEFT);
+        btnSinhVien.setFont(new Font("Yu Gothic UI Light",Font.BOLD | Font.ITALIC,16));
+        btnSinhVien.setBackground(Color.cyan);
+        btnSinhVien.setForeground(Color.GREEN);
+        btnLopHoc = new JButton("Lớp Học");
+        btnKhoa= new JButton("Khoa");
+        btnBangDiem = new JButton("Bảng Điểm");
+        btnMonHoc = new JButton("Môn Học");
+        btnThongTin = new JButton("Thông Tin");
+
+
 
         searchLaybel = new JLabel(searchIcon);
         searchField = new JTextField(20);
 
-        searchPanel = new JPanel();
-       // searchPanel.setLayout(new GridLayout(1,2));
-        searchPanel.setSize(600,100);
-        searchPanel.add(searchLaybel);
-        searchPanel.add(searchField);
+        headerAndSearchPanel = new JPanel();
 
         optionsPanel = new JPanel();
-        optionsPanel.setSize(100,100);
-        optionsPanel.setLayout(new GridLayout(2,3,10,10));
-       // optionsPanel.add(headerLabel);
-        optionsPanel.add(btnXuatDanhSach);
-        optionsPanel.add(btnThem);
-        optionsPanel.add(btnXoa);
-        optionsPanel.add(btnSua);
 
-        setSize(600,600);
-        //pack();
-        //setLayout(new GridLayout(2,1));
-        this.add(searchPanel,BorderLayout.NORTH);
-        this.add(optionsPanel,BorderLayout.CENTER);
+        GroupLayout mainGroupLayout = new GroupLayout(getContentPane());
+        mainGroupLayout.setHorizontalGroup(
+                mainGroupLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addGroup(mainGroupLayout.createSequentialGroup()
+                       // .addContainerGap(800,Short.MAX_VALUE)
+                            .addGap(160)
+                        .addComponent(btnSinhVien , GroupLayout.PREFERRED_SIZE,190,GroupLayout.PREFERRED_SIZE))
+
+
+        );
+
+        mainGroupLayout.setVerticalGroup(
+                mainGroupLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addGroup(mainGroupLayout.createSequentialGroup()
+
+                            .addComponent(btnSinhVien , GroupLayout.PREFERRED_SIZE,150,GroupLayout.PREFERRED_SIZE)
+                           // .addContainerGap(800,Short.MAX_VALUE))
+
+        ));
+
+
+        setBounds(100,100,900,600);
+        getContentPane().setLayout(mainGroupLayout);
         setBackground(Color.cyan);
         getRootPane().setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED,Color.GREEN,Color.cyan));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
