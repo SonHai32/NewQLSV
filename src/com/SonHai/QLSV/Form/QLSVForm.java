@@ -5,17 +5,22 @@ import java.awt.*;
 
 public class QLSVForm extends JFrame {
 
+    private JPanel searchPanel;
     private JPanel optionsPanel;
     private JLabel headerLabel;
+    private JLabel searchLaybel;
+    private JTextField searchField;
     private JButton btnXuatDanhSach;
     private JButton btnThem;
     private JButton btnXoa;
     private JButton btnSua;
 
-    public void setUI(){
-        //headerPanel = new JPanel();
-        headerLabel = new JLabel("QLSV APPLICATION", JLabel.CENTER);
 
+    public void setUI(){
+
+        ImageIcon searchIcon = new ImageIcon("src/image/search_16px.png");
+
+        headerLabel = new JLabel("QLSV APPLICATION", JLabel.CENTER);
         headerLabel.setForeground(Color.BLACK);
         headerLabel.setText("<html> <h1><font color='red'>QLSV APPLICATION</font></h1></html>") ;
 
@@ -29,16 +34,29 @@ public class QLSVForm extends JFrame {
         btnXoa = new JButton("Xoa");
         btnSua = new JButton("Sua");
 
+        searchLaybel = new JLabel(searchIcon);
+        searchField = new JTextField(20);
+
+        searchPanel = new JPanel();
+       // searchPanel.setLayout(new GridLayout(1,2));
+        searchPanel.setSize(600,100);
+        searchPanel.add(searchLaybel);
+        searchPanel.add(searchField);
+
         optionsPanel = new JPanel();
-        optionsPanel.setLayout(new GridLayout(5,1,5,5));
-        optionsPanel.add(headerLabel);
+        optionsPanel.setSize(100,100);
+        optionsPanel.setLayout(new GridLayout(2,3,10,10));
+       // optionsPanel.add(headerLabel);
         optionsPanel.add(btnXuatDanhSach);
         optionsPanel.add(btnThem);
         optionsPanel.add(btnXoa);
         optionsPanel.add(btnSua);
 
-        this.add(optionsPanel);
         setSize(600,600);
+        //pack();
+        //setLayout(new GridLayout(2,1));
+        this.add(searchPanel,BorderLayout.NORTH);
+        this.add(optionsPanel,BorderLayout.CENTER);
         setBackground(Color.cyan);
         getRootPane().setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED,Color.GREEN,Color.cyan));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
