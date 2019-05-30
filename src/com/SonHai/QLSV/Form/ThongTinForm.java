@@ -65,17 +65,17 @@ public class ThongTinForm extends JFrame {
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(topPanel, GroupLayout.PREFERRED_SIZE, 1250, GroupLayout.PREFERRED_SIZE)
+						.addComponent(topPanel, GroupLayout.PREFERRED_SIZE, 900, GroupLayout.PREFERRED_SIZE)
 						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-								.addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, 1240, Short.MAX_VALUE)
+								.addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
 						)
 		);
 		gl_contentPane.setVerticalGroup(
 				gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(topPanel, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+								.addComponent(topPanel, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
 
-								.addComponent(mainPanel, GroupLayout.PREFERRED_SIZE, 644, GroupLayout.PREFERRED_SIZE))
+								.addComponent(mainPanel, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE))
 		);
 
 		applicationNameLabel = new JLabel("T\u00EAn ph\u1EA7m m\u1EC1m : Qu\u1EA3n L\u00FD Sinh Vi\u00EAn");
@@ -103,7 +103,7 @@ public class ThongTinForm extends JFrame {
 		lblFacebook = new JLabel("https://www.facebook.com/hai.lam.3726613");
 		lblFacebook.setToolTipText("Facebook.com");
 		lblFacebook.setIcon(new ImageIcon("E:\\icon\\facebook_48px.png"));
-		lblFacebook.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblFacebook.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblFacebook.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -123,7 +123,7 @@ public class ThongTinForm extends JFrame {
 		lblInstagram = new JLabel("https://www.instagram.com/hai.lam.3726613");
 		lblInstagram.setToolTipText("Instagram.com");
 		lblInstagram.setIcon(new ImageIcon("E:\\icon\\instagram_new_48px.png"));
-		lblInstagram.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblInstagram.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblInstagram.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -142,7 +142,7 @@ public class ThongTinForm extends JFrame {
 		lblGithub = new JLabel("https://github.com/lamsonhai1379");
 		lblGithub.setToolTipText("Github.com");
 		lblGithub.setIcon(new ImageIcon("E:\\icon\\github_48px.png"));
-		lblGithub.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblGithub.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblGithub.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -166,24 +166,24 @@ public class ThongTinForm extends JFrame {
 								.addContainerGap()
 								.addGroup(gl_mainPanel.createParallelGroup(Alignment.TRAILING)
 										.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
-												.addComponent(applicationNameLabel, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE)
-												.addComponent(lblThngTin, GroupLayout.PREFERRED_SIZE, 560, GroupLayout.PREFERRED_SIZE)
-												.addComponent(lblPhienBan, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE))
-										.addComponent(lblTacGia, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE))
+												.addComponent(applicationNameLabel, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblThngTin, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblPhienBan, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblTacGia, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(ComponentPlacement.RELATED)
 								.addComponent(separator, GroupLayout.PREFERRED_SIZE, 4, GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(ComponentPlacement.RELATED)
 								.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
-										.addComponent(lienHeLabel, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblFacebook, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblInstagram, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblGithub, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(110, Short.MAX_VALUE))
+										.addComponent(lienHeLabel, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblFacebook, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblInstagram, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblGithub, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap(20, Short.MAX_VALUE))
 		);
 		gl_mainPanel.setVerticalGroup(
 				gl_mainPanel.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_mainPanel.createSequentialGroup()
-								.addContainerGap(183, Short.MAX_VALUE)
+								.addContainerGap(100, Short.MAX_VALUE)
 								.addGroup(gl_mainPanel.createParallelGroup(Alignment.LEADING)
 										.addGroup(gl_mainPanel.createSequentialGroup()
 												.addComponent(lienHeLabel, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
@@ -194,13 +194,13 @@ public class ThongTinForm extends JFrame {
 												.addPreferredGap(ComponentPlacement.RELATED)
 												.addComponent(lblGithub))
 										.addGroup(gl_mainPanel.createSequentialGroup()
-												.addComponent(lblThngTin, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblThngTin, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(applicationNameLabel, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
+												.addComponent(applicationNameLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(lblPhienBan, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblPhienBan, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
 												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(lblTacGia, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
+												.addComponent(lblTacGia, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
 										.addComponent(separator, GroupLayout.PREFERRED_SIZE, 450, GroupLayout.PREFERRED_SIZE))
 								.addGap(11))
 		);
