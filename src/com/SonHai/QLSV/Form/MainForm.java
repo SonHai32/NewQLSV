@@ -52,7 +52,7 @@ public class MainForm extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    QLSVForm frame = new QLSVForm();
+                    MainForm frame = new MainForm();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
