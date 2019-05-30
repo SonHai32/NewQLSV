@@ -108,25 +108,30 @@ public class QLSVForm extends JFrame {
 		lblBangDiem = new JLabel("B\u1EA3ng \u0110i\u1EC3m");
 		lblBangDiem.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBangDiem.setForeground(Color.RED);
-		lblBangDiem.setFont(new Font("Serif", Font.BOLD, 30));
+		lblBangDiem.setFont(new Font("Serif", Font.BOLD, 20));
 		GroupLayout gl_bangDiemPanel = new GroupLayout(bangDiemPanel);
 		gl_bangDiemPanel.setHorizontalGroup(
 				gl_bangDiemPanel.createParallelGroup(Alignment.TRAILING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_bangDiemPanel.createSequentialGroup()
-								.addContainerGap(98, Short.MAX_VALUE)
+								.addContainerGap(50, Short.MAX_VALUE)
+                                .addGap(50)
 								.addComponent(lblIconBangDiem, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(100))
-						.addComponent(lblBangDiem, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+								.addGap(50))
+						.addGroup(gl_bangDiemPanel.createSequentialGroup()
+                                .addGap(25)
+                                .addComponent(lblBangDiem,GroupLayout.DEFAULT_SIZE,100,Short.MAX_VALUE)
+                                .addGap(25)
+                        )
 		);
 		gl_bangDiemPanel.setVerticalGroup(
 				gl_bangDiemPanel.createParallelGroup(Alignment.LEADING)
-						.addGap(0, 250, Short.MAX_VALUE)
-						.addGroup(gl_bangDiemPanel.createSequentialGroup()
-								.addGap(100)
+                        .addGroup(gl_bangDiemPanel.createSequentialGroup()
+								.addGap(40)
 								.addComponent(lblIconBangDiem, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(34)
-								.addComponent(lblBangDiem, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+								.addGap(20)
+								.addComponent(lblBangDiem, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addGap(20)
+                        )
 		);
 		bangDiemPanel.setLayout(gl_bangDiemPanel);
 
@@ -140,25 +145,32 @@ public class QLSVForm extends JFrame {
 		lblLopHoc = new JLabel("L\u1EDBp H\u1ECDc");
 		lblLopHoc.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLopHoc.setForeground(Color.RED);
-		lblLopHoc.setFont(new Font("Serif", Font.BOLD, 30));
+		lblLopHoc.setFont(new Font("Serif", Font.BOLD, 20));
 		GroupLayout gl_lopHocPanel = new GroupLayout(lopHocPanel);
 		gl_lopHocPanel.setHorizontalGroup(
 				gl_lopHocPanel.createParallelGroup(Alignment.TRAILING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_lopHocPanel.createSequentialGroup()
-								.addContainerGap(98, Short.MAX_VALUE)
+								.addContainerGap(50, Short.MAX_VALUE)
+                                .addGap(50)
 								.addComponent(lblIconLopHoc, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(100))
-						.addComponent(lblLopHoc, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+								.addGap(50))
+                        .addGroup(gl_lopHocPanel.createSequentialGroup()
+                                .addGap(25)
+                                .addComponent(lblLopHoc,GroupLayout.DEFAULT_SIZE,100,Short.MAX_VALUE)
+                                .addGap(25)
+                        )
+
 		);
 		gl_lopHocPanel.setVerticalGroup(
 				gl_lopHocPanel.createParallelGroup(Alignment.LEADING)
-						.addGap(0, 250, Short.MAX_VALUE)
+
 						.addGroup(gl_lopHocPanel.createSequentialGroup()
-								.addGap(100)
+								.addGap(40)
 								.addComponent(lblIconLopHoc, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(34)
-								.addComponent(lblLopHoc, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+								.addGap(20)
+								.addComponent(lblLopHoc, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addGap(20)
+                        )
 		);
 		lopHocPanel.setLayout(gl_lopHocPanel);
 
@@ -172,25 +184,31 @@ public class QLSVForm extends JFrame {
 		lblMonHoc = new JLabel("M\u00F4n H\u1ECDc");
 		lblMonHoc.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMonHoc.setForeground(Color.RED);
-		lblMonHoc.setFont(new Font("Serif", Font.BOLD, 30));
+		lblMonHoc.setFont(new Font("Serif", Font.BOLD, 20));
 		GroupLayout gl_monHocPanel = new GroupLayout(monHocPanel);
 		gl_monHocPanel.setHorizontalGroup(
 				gl_monHocPanel.createParallelGroup(Alignment.TRAILING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_monHocPanel.createSequentialGroup()
-								.addContainerGap(98, Short.MAX_VALUE)
+								.addContainerGap(50, Short.MAX_VALUE)
+                                .addGap(50)
 								.addComponent(lblIconMonHoc, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(100))
-						.addComponent(lblMonHoc, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+								.addGap(50))
+                        .addGroup(gl_monHocPanel.createSequentialGroup()
+                                .addGap(25)
+                                .addComponent(lblMonHoc, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addGap(25)
+                        )
+
 		);
 		gl_monHocPanel.setVerticalGroup(
 				gl_monHocPanel.createParallelGroup(Alignment.LEADING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_monHocPanel.createSequentialGroup()
-								.addGap(100)
+								.addGap(40)
 								.addComponent(lblIconMonHoc, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(34)
-								.addComponent(lblMonHoc, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+								.addGap(20)
+								.addComponent(lblMonHoc, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addGap(20)
+                        )
 		);
 		monHocPanel.setLayout(gl_monHocPanel);
 
@@ -204,25 +222,30 @@ public class QLSVForm extends JFrame {
 		lblKhoa = new JLabel("Khoa");
 		lblKhoa.setHorizontalAlignment(SwingConstants.CENTER);
 		lblKhoa.setForeground(Color.RED);
-		lblKhoa.setFont(new Font("Serif", Font.BOLD, 30));
+		lblKhoa.setFont(new Font("Serif", Font.BOLD, 20));
 		GroupLayout gl_khoaPanel = new GroupLayout(khoaPanel);
 		gl_khoaPanel.setHorizontalGroup(
 				gl_khoaPanel.createParallelGroup(Alignment.TRAILING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_khoaPanel.createSequentialGroup()
-								.addContainerGap(98, Short.MAX_VALUE)
+								.addContainerGap(50, Short.MAX_VALUE)
 								.addComponent(lblIconKhoa, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(100))
-						.addComponent(lblKhoa, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+								.addGap(50))
+                        .addGroup(gl_khoaPanel.createSequentialGroup()
+                                .addGap(25)
+                                .addComponent(lblKhoa, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addGap(25)
+                        )
+
 		);
 		gl_khoaPanel.setVerticalGroup(
 				gl_khoaPanel.createParallelGroup(Alignment.LEADING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_khoaPanel.createSequentialGroup()
-								.addGap(100)
+								.addGap(45)
 								.addComponent(lblIconKhoa, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(34)
-								.addComponent(lblKhoa, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+								.addGap(20)
+								.addComponent(lblKhoa, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                .addGap(20)
+                        )
 		);
 		khoaPanel.setLayout(gl_khoaPanel);
 
@@ -236,25 +259,30 @@ public class QLSVForm extends JFrame {
 		lblThongTin = new JLabel("Th\u00F4ng Tin");
 		lblThongTin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblThongTin.setForeground(Color.RED);
-		lblThongTin.setFont(new Font("Serif", Font.BOLD, 30));
+		lblThongTin.setFont(new Font("Serif", Font.BOLD, 20));
 		GroupLayout gl_thongTinPanel = new GroupLayout(thongTinPanel);
 		gl_thongTinPanel.setHorizontalGroup(
 				gl_thongTinPanel.createParallelGroup(Alignment.TRAILING)
-						.addGap(0, 250, Short.MAX_VALUE)
-						.addGroup(gl_thongTinPanel.createSequentialGroup()
-								.addContainerGap(98, Short.MAX_VALUE)
+                        .addGroup(gl_thongTinPanel.createSequentialGroup()
+								.addContainerGap(50, Short.MAX_VALUE)
+                                .addGap(50)
 								.addComponent(lblIconThongTin, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(100))
-						.addComponent(lblThongTin, GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+								.addGap(50))
+                        .addGroup(gl_thongTinPanel.createSequentialGroup()
+                                .addGap(25)
+                                .addComponent(lblThongTin, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addGap(25)
+                        )
 		);
 		gl_thongTinPanel.setVerticalGroup(
 				gl_thongTinPanel.createParallelGroup(Alignment.LEADING)
-						.addGap(0, 250, Short.MAX_VALUE)
 						.addGroup(gl_thongTinPanel.createSequentialGroup()
-								.addGap(100)
+								.addGap(45)
 								.addComponent(lblIconThongTin, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(34)
-								.addComponent(lblThongTin, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+								.addGap(20)
+								.addComponent(lblThongTin, GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addGap(20)
+                        )
 		);
 		thongTinPanel.setLayout(gl_thongTinPanel);
 		GroupLayout gl_mainPanel = new GroupLayout(mainPanel);
