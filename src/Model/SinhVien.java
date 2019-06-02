@@ -1,7 +1,16 @@
 package Model;
 
 public class SinhVien {
-	private String maSinhVien,hoSinhVien,tenSinhVien,ngaySinh,gioiTinh,diaChi;
+	private String ID,maSinhVien,hoTen,ngaySinh,gioiTinh,noiSinh,maLop,maKhoa;
+
+	
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		this.ID = iD;
+	}
 
 	public String getMaSinhVien() {
 		return maSinhVien;
@@ -11,20 +20,12 @@ public class SinhVien {
 		this.maSinhVien = maSinhVien;
 	}
 
-	public String getHoSinhVien() {
-		return hoSinhVien;
+	public String getHoTen() {
+		return hoTen;
 	}
 
-	public void setHoSinhVien(String hoSinhVien) {
-		this.hoSinhVien = hoSinhVien;
-	}
-
-	public String getTenSinhVien() {
-		return tenSinhVien;
-	}
-
-	public void setTenSinhVien(String tenSinhVien) {
-		this.tenSinhVien = tenSinhVien;
+	public void setHoTen(String hoTen) {
+		this.hoTen = hoTen;
 	}
 
 	public String getNgaySinh() {
@@ -43,12 +44,29 @@ public class SinhVien {
 		this.gioiTinh = gioiTinh;
 	}
 
-	public String getDiaChi() {
-		return diaChi;
+	public String getNoiSinh() {
+		return noiSinh;
 	}
 
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
+	public void setNoiSinh(String noiSinh) {
+		this.noiSinh = noiSinh;
 	}	
+	
+	public void setMalop(String maLop) {
+		this.maLop = maLop;
+	}
+	
+	public String getMaLop() {
+		return maLop;
+	}
+
+	public String getMaKhoa() {
+		return maKhoa;
+	}
+
+	public void setMaKhoa(String maKhoa) {
+		this.maKhoa = maKhoa;
+	}
+	
 		
 }
