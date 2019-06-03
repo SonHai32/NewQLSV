@@ -1,6 +1,5 @@
 package View;
 
-import Controller.DAOSinhVien;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -9,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import Controller.DAOSinhVien;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -32,7 +32,6 @@ public class SinhVienForm extends JFrame {
     private JLabel lblHoTen;
     private JTextField fldHoTen;
     private JLabel lblGioiTinh;
-    private JTextField fldGioiTinh;
     private JLabel lblNgaySinh;
     private JTextField fldNgaySinh;
     private JTextField fldNgaySinh_1;
@@ -41,6 +40,7 @@ public class SinhVienForm extends JFrame {
     private JLabel lblKhoa;
     private JTextField fldKhoa;
     private JComboBox<String> cbLuaChon;
+    private JComboBox<String> ccbGioiTinh;
     private DefaultTableModel model  ;
     private ArrayList<Model.SinhVien> listSinhVien;
 
@@ -76,7 +76,7 @@ public class SinhVienForm extends JFrame {
 
     }
     public void showTable() {
-        listSinhVien = new DAOSinhVien().getListSinhVien("SELECT * FROM sinhvien");
+        listSinhVien = new DAOSinhVien().getListSinhVien("SELECT * FROM sinhvien ORDER BY hotensv DESC");
         model = (DefaultTableModel) tbSinhVien.getModel();
         listSinhVien.forEach((s) ->{
             model.addRow(new Object[] {
@@ -123,8 +123,6 @@ public class SinhVienForm extends JFrame {
         mainFieldPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         JScrollPane scrollPane = new JScrollPane();
-
-
         scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         GroupLayout gl_mainPanel = new GroupLayout(mainPanel);
         gl_mainPanel.setHorizontalGroup(
@@ -145,7 +143,10 @@ public class SinhVienForm extends JFrame {
         tbSinhVien = new JTable();
         tbSinhVien.setGridColor(new Color(255,255,255));
         tbSinhVien.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
-
+        tbSinhVien.setRowHeight(30);
+        tbSinhVien.setRowMargin(5);
+        tbSinhVien.setShowHorizontalLines(false);
+        tbSinhVien.setShowVerticalLines(false);
         tbSinhVien.setModel(new DefaultTableModel(
                 new Object [][] {
 
@@ -157,10 +158,7 @@ public class SinhVienForm extends JFrame {
         ));
 
 
-        tbSinhVien.setRowHeight(30);
-        tbSinhVien.setRowMargin(5);
-        tbSinhVien.setShowHorizontalLines(false);
-        tbSinhVien.setShowVerticalLines(false);
+
         scrollPane.setViewportView(tbSinhVien);
 
         JLabel lblThongTinSinhVien = new JLabel("Th\u00F4ng Tin Sinh Vi\u00EAn");
@@ -196,8 +194,11 @@ public class SinhVienForm extends JFrame {
         lblGioiTinh.setForeground(Color.BLUE);
         lblGioiTinh.setFont(new Font("serif",Font.BOLD | Font.ITALIC,15));
 
-        fldGioiTinh = new JTextField();
-        fldGioiTinh.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        ccbGioiTinh = new JComboBox<String>();
+        ccbGioiTinh.addItem("Nam");
+        ccbGioiTinh.addItem("Nữ");
+        //ccbGioiTinh.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+
 
         lblNgaySinh = new JLabel();
         lblNgaySinh.setText("Ngày Sinh");
@@ -226,10 +227,11 @@ public class SinhVienForm extends JFrame {
         fldKhoa = new JTextField();
         fldKhoa.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 
-        cbLuaChon = new JComboBox();
+        cbLuaChon = new JComboBox<String>();
         cbLuaChon.addItem("Thêm");
         cbLuaChon.addItem("Sửa");
         cbLuaChon.addItem("Xóa");
+
 
         GroupLayout gl_mainFieldPanel = new GroupLayout(mainFieldPanel);
         gl_mainFieldPanel.setHorizontalGroup(
@@ -242,8 +244,6 @@ public class SinhVienForm extends JFrame {
                         .addComponent(lblMaSinhVien, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(fldMaSinhVien, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblHoTen, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblGioiTinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(fldGioiTinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblNgaySinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(fldNgaySinh_1, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblNoiSinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
@@ -253,6 +253,8 @@ public class SinhVienForm extends JFrame {
                                 .addComponent(cbLuaChon, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(fldKhoa, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE))
                         .addComponent(fldHoTen, GroupLayout.DEFAULT_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblGioiTinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ccbGioiTinh, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
         );
         gl_mainFieldPanel.setVerticalGroup(
                 gl_mainFieldPanel.createParallelGroup(Alignment.LEADING)
@@ -272,8 +274,8 @@ public class SinhVienForm extends JFrame {
                                 .addComponent(fldHoTen, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addComponent(lblGioiTinh)
-                                .addPreferredGap(ComponentPlacement.RELATED)
-                                .addComponent(fldGioiTinh, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(4)
+                                .addComponent(ccbGioiTinh, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED)
                                 .addComponent(lblNgaySinh, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED)
@@ -286,7 +288,7 @@ public class SinhVienForm extends JFrame {
                                 .addComponent(lblKhoa)
                                 .addPreferredGap(ComponentPlacement.RELATED)
                                 .addComponent(fldKhoa, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                                .addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                                 .addComponent(cbLuaChon, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
@@ -294,7 +296,7 @@ public class SinhVienForm extends JFrame {
         mainPanel.setLayout(gl_mainPanel);
 
         JLabel lblIconSinhVien = new JLabel("");
-        lblIconSinhVien.setIcon(new ImageIcon(getClass().getResource("/image/student_50px.png")));
+        lblIconSinhVien.setIcon(new ImageIcon(getClass().getResource("/images/student_50px.png")));
         JLabel lblSinhVien = new JLabel("Sinh Viên ");
         lblSinhVien.setFont(new Font("serif",Font.BOLD| Font.ITALIC,20));
         lblSinhVien.setForeground(Color.RED);
@@ -326,6 +328,5 @@ public class SinhVienForm extends JFrame {
         contentPane.setLayout(gl_contentPane);
 
     }
-
 }
 
