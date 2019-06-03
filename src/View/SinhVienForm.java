@@ -3,6 +3,13 @@ package View;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,7 +46,7 @@ public class SinhVienForm extends JFrame {
     private JTextField fldNoiSinh;
     private JLabel lblKhoa;
     private JTextField fldKhoa;
-    private JComboBox<String> cbLuaChon;
+    private JComboBox<String> ccbLuaChon;
     private JComboBox<String> ccbGioiTinh;
     private DefaultTableModel model  ;
     private ArrayList<Model.SinhVien> listSinhVien;
@@ -180,6 +187,11 @@ public class SinhVienForm extends JFrame {
 
         fldMaSinhVien = new JTextField();
         fldMaSinhVien.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        fldMaSinhVien.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                fldMaSinhVienKeyPressed(evt);
+            }
+        });
 
         lblHoTen = new JLabel();
         lblHoTen.setText("Họ và Tên");
@@ -188,6 +200,11 @@ public class SinhVienForm extends JFrame {
 
         fldHoTen = new JTextField();
         fldHoTen.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        fldHoTen.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                fldHoTenKeyPressed(evt);
+            }
+        });
 
         lblGioiTinh = new JLabel();
         lblGioiTinh.setText("Giới Tính");
@@ -197,8 +214,14 @@ public class SinhVienForm extends JFrame {
         ccbGioiTinh = new JComboBox<String>();
         ccbGioiTinh.addItem("Nam");
         ccbGioiTinh.addItem("Nữ");
-        //ccbGioiTinh.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+        ccbGioiTinh.addItemListener(new ItemListener() {
 
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                ////////////////// add After
+
+            }
+        });
 
         lblNgaySinh = new JLabel();
         lblNgaySinh.setText("Ngày Sinh");
@@ -207,6 +230,11 @@ public class SinhVienForm extends JFrame {
 
         fldNgaySinh = new JTextField();
         fldNgaySinh.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        fldNgaySinh.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                //////////////////add after
+            }
+        });
 
         lblNoiSinh = new JLabel();
         lblNoiSinh.setText("Nơi Sinh");
@@ -215,6 +243,11 @@ public class SinhVienForm extends JFrame {
 
         fldNoiSinh = new JTextField();
         fldNoiSinh.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        fldNoiSinh.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                /////// add after
+            }
+        });
 
         fldNgaySinh_1 = new JTextField();
         fldNgaySinh_1.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
@@ -226,11 +259,23 @@ public class SinhVienForm extends JFrame {
 
         fldKhoa = new JTextField();
         fldKhoa.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        fldKhoa.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                //////////// addafter
+            }
+        });
 
-        cbLuaChon = new JComboBox<String>();
-        cbLuaChon.addItem("Thêm");
-        cbLuaChon.addItem("Sửa");
-        cbLuaChon.addItem("Xóa");
+        ccbLuaChon = new JComboBox<String>();
+        ccbLuaChon.addItem("Thêm");
+        ccbLuaChon.addItem("Sửa");
+        ccbLuaChon.addItem("Xóa");
+        ccbLuaChon.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent evt) {
+                //// add after
+
+            }
+        });
 
 
         GroupLayout gl_mainFieldPanel = new GroupLayout(mainFieldPanel);
@@ -250,7 +295,7 @@ public class SinhVienForm extends JFrame {
                         .addComponent(fldNoiSinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblKhoa, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addGroup(gl_mainFieldPanel.createParallelGroup(Alignment.TRAILING)
-                                .addComponent(cbLuaChon, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ccbLuaChon, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(fldKhoa, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE))
                         .addComponent(fldHoTen, GroupLayout.DEFAULT_SIZE, 298, GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblGioiTinh, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
@@ -274,7 +319,7 @@ public class SinhVienForm extends JFrame {
                                 .addComponent(fldHoTen, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addComponent(lblGioiTinh)
-                                .addGap(4)
+                                .addGap(5)
                                 .addComponent(ccbGioiTinh, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED)
                                 .addComponent(lblNgaySinh, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
@@ -289,7 +334,7 @@ public class SinhVienForm extends JFrame {
                                 .addPreferredGap(ComponentPlacement.RELATED)
                                 .addComponent(fldKhoa, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                                .addComponent(cbLuaChon, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ccbLuaChon, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
         );
         mainFieldPanel.setLayout(gl_mainFieldPanel);
@@ -328,5 +373,35 @@ public class SinhVienForm extends JFrame {
         contentPane.setLayout(gl_contentPane);
 
     }
+
+    private void fldMaSinhVienKeyPressed(KeyEvent evt) {
+        String sql;
+        if("".equals(fldMaSinhVien.getText()) | " ".equals(fldMaSinhVien.getText()))
+            sql = "SELECT * FROM sinhvien";
+
+        else
+            sql = "SELECT * FROM sinhvien WHERE masv = '%"+fldMaSinhVien+"%'";
+
+
+        sinhVienSearched(sql, evt);
+    }
+
+    private void fldHoTenKeyPressed(KeyEvent evt) {
+        String sql;
+        if("".equals(fldHoTen.getText()) | " ".equals(fldHoTen.getText()))
+            sql = "SELECT * FROM sinhvien";
+
+        else
+            sql = "SELECT * FROM sinhvien WHERE hotensv = '%" + fldHoTen + "%'";
+
+        sinhVienSearched(sql, evt);
+
+
+    }
+
+    private void sinhVienSearched(String sql , KeyEvent evt ) {
+
+    }
+
 }
 
