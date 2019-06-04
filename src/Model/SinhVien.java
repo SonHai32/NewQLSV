@@ -1,15 +1,16 @@
 package Model;
 
 public class SinhVien {
-	private String ID,maSinhVien,hoTen,ngaySinh,gioiTinh,noiSinh,maLop,maKhoa;
+	private String maSinhVien,hoTen,ngaySinh,gioiTinh,noiSinh,maLop,maKhoa;
+	private int ID;
 
 	
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public void setID(String iD) {
-		this.ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
 
 	public String getMaSinhVien() {
@@ -52,7 +53,7 @@ public class SinhVien {
 		this.noiSinh = noiSinh;
 	}	
 	
-	public void setMalop(String maLop) {
+	public void setMaLop(String maLop) {
 		this.maLop = maLop;
 	}
 	
